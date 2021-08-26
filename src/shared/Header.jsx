@@ -5,7 +5,7 @@ import styles from './header.css';
 function HeaderComponent() {
     return (
         <header>
-            <h1 className={styles.example}>Reddit for our own 123</h1>
+            <h1 className={styles.example}>Hello React</h1>
         </header>
     )
 }
