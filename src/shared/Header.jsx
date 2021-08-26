@@ -1,10 +1,11 @@
 import { hot } from 'react-hot-loader/root';
 import * as React from 'react';
+import styles from './header.css';
 
 function HeaderComponent() {
     return (
         <header>
-            <h1>Reddit for our own 123</h1>
+            <h1 className={styles.example}>Reddit for our own 123</h1>
         </header>
     )
 }

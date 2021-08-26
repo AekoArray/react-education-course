@@ -34,12 +34,29 @@ module.exports = {
     },
     //настройка зависимостей(loaders)
     module: {
-        rules: [{
-            //файлы с этим окончанием будут обрабатываться с помощью
-            //этого лоадера
-            test: /\.[tj]sx?$/,
-            use: ['ts-loader']
-        }]
+        rules: [
+            {
+                //файлы с этим окончанием будут обрабатываться с помощью
+                //этого лоадера
+                test: /\.[tj]sx?$/,
+                use: ['ts-loader']
+            },
+            {
+                test: /\.css$/,
+                use: [
+                    'style-loader', 
+                    {
+                        loader: 'css-loader',
+                        options: {
+                            modules: {
+                                mode: 'local',
+                                localIdentName: '[name]__[local]--[hash:base64:5]',
+                            },
+                        }
+                    }
+                ]
+            }
+        ]
     },
     devtool: setupDevtool(),
     plugins: IS_DEV
